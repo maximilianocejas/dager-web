@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.bg-radial{
+  background: radial-gradient(rgba(13,13,13,0) 20%,rgb(13, 13, 13) 70%);
+}
+
+.bg-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/header-image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.slider{
+  width: 75vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-track{
+  display: flex;
+  column-gap: 20px;
+  padding: 20px 0;
+  animation: scroll 25s linear infinite;
+  -webkit-animation: scroll 25s linear infinite;
+  width: calc(150px * 14);
+}
+
+.slider .slide{
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .slide img{
+  width: 100%;
+  filter: grayscale(100%);
+  opacity: 0.45;
+}
+
+@keyframes scroll{
+  0%{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100%{
+    -webkit-transform: translateX(calc(-150px * 7));
+    transform: translateX(calc(-150px * 7));
+  }
+}
+.slider-contact{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider-contact .slide-track-contact{
+  display: flex;
+  column-gap: 20px;
+  padding: 20px 0;
+  animation: scroll2 40s linear infinite;
+  -webkit-animation: scroll2 40s linear infinite;
+  width: calc(100% * 2);
+}
+
+.slider-contact .slide-contact{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-contact .slide-contact p{
+  width: 100%;
+}
+
+@keyframes scroll2{
+  0%{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100%{
+    -webkit-transform: translateX(calc(-100% * 2));
+    transform: translateX(calc(-100% * 2));
+  }
+}
+
+
+.bg-radial-axe{
+  background: radial-gradient(rgba(78, 6, 107, 1) 1%,rgba(98,31,145,0) 70%);
+}
+
+.axe-1{
+  animation: move1 4s ease-in-out infinite;
+}
+.axe-2{
+  animation: move2 4s ease-in-out infinite;
+}
+
+
+@keyframes move1{
+  50%{
+    transform: rotate(30deg);
+  }
+  100%{
+    transform: rotate(20deg)
+  }
+}
+@keyframes move2{
+  50%{
+    transform: rotate(-30deg);
+  }
+  100%{
+    transform: rotate(-20deg)
+  }
+}
